@@ -34,7 +34,7 @@ describe DockingStation do
   end
 
   it 'raises an exception when a user tries to dock a bike at a full docking station' do
-    subject.dock(Bike.new)
+    20.times { subject.dock(Bike.new) }
     expect { subject.dock(Bike.new)}.to raise_error 'Error: this docking station is occupied.'
   end
 
