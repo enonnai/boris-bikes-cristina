@@ -16,5 +16,8 @@ describe DockingStation do
     expect(subject).to respond_to(:dock).with(1).argument
   end
 
-
+  it 'has an attribute set to an instance of Bike post docking' do
+    bike = Bike.new
+    expect(subject.dock(bike)).to eq bike
+  end
 end
