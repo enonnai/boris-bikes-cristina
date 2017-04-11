@@ -5,7 +5,11 @@ class DockingStation
   attr_accessor :bike
 
   def release_bike
-    Bike.new
+    if bike == nil
+      raise('Error: no bikes available at this docking station.')
+    else
+      Bike.new
+    end
   end
 
   def dock(bike)
