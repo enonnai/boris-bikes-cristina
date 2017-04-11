@@ -2,21 +2,27 @@
 require './lib/bike.rb'
 
 class DockingStation
-  attr_accessor :bike
+
+  attr_accessor :bikes
+
+  def initialize
+    @bikes = []
+  end
 
   def release_bike
-    if bike == nil
+    if bikes.empty?
       raise('Error: no bikes available at this docking station.')
     else
-      Bike.new
+      bikes.pop
     end
   end
 
   def dock(bike)
-    if self.bike == nil
-      self.bike=(bike)
+    if bikes.count < 20
+      bikes << bike
     else
       raise('Error: this docking station is occupied.')
     end
   end
+
 end

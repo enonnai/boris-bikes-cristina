@@ -20,13 +20,13 @@ describe DockingStation do
 
   it 'has an attribute set to an instance of Bike post docking' do
     bike = Bike.new
-    expect(subject.dock(bike)).to eq bike
+    expect(subject.dock(bike)).to eq subject.bikes
   end
 
   it 'returns bike when asked for @bike' do
     bike = Bike.new
     subject.dock(bike)
-    expect(subject.bike).to eq bike
+    expect(subject.bikes).to include bike
   end
 
   it 'raises an exception when user tries to release a bike from an empty docking station' do
