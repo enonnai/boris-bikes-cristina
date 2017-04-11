@@ -2,10 +2,10 @@
 require './lib/bike.rb'
 
 class DockingStation
-  attr_accessor :bike
+  attr_accessor :bike_stored
 
   def release_bike
-    if bike == nil
+    if bike_stored == nil
       raise('Error: no bikes available at this docking station.')
     else
       Bike.new
@@ -13,6 +13,10 @@ class DockingStation
   end
 
   def dock(bike)
-    self.bike=(bike)
+    if self.bike_stored == nil
+      self.bike_stored=(bike)
+    else
+      raise('Error: this docking station is occupied.')
+    end
   end
 end

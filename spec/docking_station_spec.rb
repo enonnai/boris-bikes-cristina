@@ -26,7 +26,7 @@ describe DockingStation do
   it 'returns bike when asked for @bike' do
     bike = Bike.new
     subject.dock(bike)
-    expect(subject.bike).to eq bike
+    expect(subject.bike_stored).to eq bike
   end
 
   it 'raises an exception when user tries to release a bike from an empty docking station' do
