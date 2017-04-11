@@ -10,19 +10,21 @@ class DockingStation
   end
 
   def release_bike
-    if bikes.empty?
-      raise('Error: no bikes available at this docking station.')
-    else
-      bikes.pop
-    end
+    empty? ? raise('Error: no bikes available at this docking station.') : bikes.pop
   end
 
   def dock(bike)
-    if bikes.count < 20
-      bikes << bike
-    else
-      raise('Error: this docking station is occupied.')
-    end
+    full? ? raise('Error: this docking station is occupied.') : bikes << bike
+  end
+
+  private
+
+  def full?
+    bikes.count >= 20
+  end
+
+  def empty?
+    bikes.empty?
   end
 
 end
