@@ -54,4 +54,16 @@ describe DockingStation do
     expect(station.capacity).to eq DockingStation::DEFAULT_CAPACITY
   end
 
+  describe "#dock" do
+    let(:bike) { Bike.new }
+    let(:station) { DockingStation.new(35) }
+    it "allows correct number of bikes to be docked when custom capacity has been set" do
+      35.times { station.dock(bike) }
+      expect { station.dock(bike) }.to raise_error 'Error: this docking station is occupied.'
+    end
+  end
+
+
+
+
 end
