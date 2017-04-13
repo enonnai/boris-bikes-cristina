@@ -44,5 +44,10 @@ describe DockingStation do
     expect { DockingStation.new(25) }.to_not raise_error
   end
 
+    it "can store a capacity value at initialisation" do
+      station = DockingStation.new(25)
+      expect(station.capacity).to eq 25 
+  end
+
 
 end
