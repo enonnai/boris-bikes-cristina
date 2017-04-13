@@ -46,8 +46,12 @@ describe DockingStation do
 
     it "can store a capacity value at initialisation" do
       station = DockingStation.new(25)
-      expect(station.capacity).to eq 25 
+      expect(station.capacity).to eq 25
   end
 
+  it "can pass on the default capacity if none is initialised" do
+    station = DockingStation.new()
+    expect(station.capacity).to eq DockingStation::DEFAULT_CAPACITY
+  end
 
 end
