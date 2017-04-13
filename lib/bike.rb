@@ -7,4 +7,8 @@ class Bike
   def report_broken
   end
 
+  def broken?
+    false
+  end
+
 end
