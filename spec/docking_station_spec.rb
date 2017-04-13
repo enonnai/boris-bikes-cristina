@@ -38,4 +38,5 @@ describe DockingStation do
     expect { subject.dock(Bike.new)}.to raise_error 'Error: this docking station is occupied.'
   end
 
+  it {is_expected.to respond_to :capacity}
 end
