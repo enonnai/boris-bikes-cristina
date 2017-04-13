@@ -7,4 +7,10 @@ describe Bike do
     expect(subject.broken?).to eq false
   end
 
+  describe '#broken?' do
+      it "returns true if bike.report_broken has been run" do
+        subject.report_broken
+        expect(subject.broken?).to eq true
+      end
+  end
 end
