@@ -39,4 +39,10 @@ describe DockingStation do
   end
 
   it {is_expected.to respond_to :capacity}
+
+  it "can pass a value at initialisation" do
+    expect { DockingStation.new(25) }.to_not raise_error
+  end
+
+
 end
