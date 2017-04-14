@@ -11,14 +11,26 @@ class DockingStation
   def initialize(capacity = DEFAULT_CAPACITY)
     @capacity = capacity
     @bikes = []
+    @available_bikes = []
+    @broken_bikes = []
   end
 
   def release_bike
-    empty? || bikes[0].broken? ? raise('Error: no bikes available at this docking station.') : bikes.pop
+      if !@available_bikes.empty?
+        @available_bikes.pop
+      elsif @available_bikes.empty? || !@broken_bikes.empty?
+        raise('Error: no bikes available at this docking station.')
+      end
   end
 
   def dock(bike)
-    full? ? raise('Error: this docking station is occupied.') : bikes << bike
+    raise('Error: this docking station is occupied.') if full?
+    @bikes << bike
+    if bike.broken? == true
+      @broken_bikes << bike
+    else
+      @available_bikes << bike
+    end
   end
 
   private
