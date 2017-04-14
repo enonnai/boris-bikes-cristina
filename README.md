@@ -1,5 +1,24 @@
-Welcome to being a developer
+# Boris Bikes
 
-Let's go back several years, to the days when there were no Boris Bikes. Imagine that you're a junior developer (that was easy). Transport for London, the body responsible for delivery of a new bike system, come to you with a plan: a network of docking stations and bikes that anyone can use. They want you to build a program that will emulate all the docking stations, bikes, and infrastructure (repair staff, and so on) required to make their dream a reality.
+This repo contains a network of docking stations and bikes that anyone can use. The program will emulate all the docking stations, bikes, and infrastructure (repair staff, and so on) required to make the bike network in London work.
 
-To help structure your work, here are 22 challenges. They all build on one another. They require you to research things, to get stuck, and to find your own solutions. This is on purpose. A developer is a 'knowledge worker' - someone who will spend the majority of their time researching and learning how to solve problems. It'll suck for a bit, but with practice, you will get faster: and there's no better feeling than finding the answer to a problem that's been standing in your way for hours.
+## Getting started
+
+`git clone https://github.com/pmuldoon86/boris-bikes`
+
+Ruby installation page: https://www.ruby-lang.org/en/documentation/installation/
+
+`gem install rspec`
+
+`bundle install`
+
+## Usage
+
+
+
+
+## Running tests
+
+Run unit tests from the project folder URL via `rspec`
+
+Run feature tests by running irb within the project folder `require spec-file-name`
