@@ -6,12 +6,12 @@ describe DockingStation do
 
   it 'gets a bike' do
     subject.dock(Bike.new)
-    expect(subject.release_bike).to be_an_instance_of Bike
+    expect(subject.release_bike).to include(an_instance_of Bike)
   end
 
-  it 'expects the bike to be working' do
+  it 'expects to release a bike which is not broken' do
     subject.dock(Bike.new)
-    expect(subject.release_bike).to_not be_broken
+    expect(subject.release_bike.first.broken?).to be false
   end
 
   it 'docks a bike when passed dock(bike)' do
@@ -70,6 +70,11 @@ describe DockingStation do
     expect { subject.release_bike }.to raise_error 'Error: no bikes available at this docking station.'
   end
 
+  it { is_expected.to respond_to :return_bike }
 
-
+  it 'accepts returning bikes' do
+    subject.dock(Bike.new)
+    subject.release_bike
+    expect(subject.return_bike).to be_an_instance_of Bike
+  end
 end
